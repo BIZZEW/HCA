@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HCA::{% block title%}DASHBOARD{% endblock %}</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Baloo Bhaina">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Carter One">
+    <link rel="stylesheet" type="text/css" href="{% static 'health/style.css' %}"/>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img class="navbar-brand" src="https://s26.postimg.org/sj481pel5/ELSE_52.png">
+                <a class="navbar-brand" href="{% url 'health:index' %}">HC AIDE</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="topNavBar">
+                <ul class="nav navbar-nav">
+                    <li class="">
+                        <a href="{% url 'health:index' %}">
+                            <div class="ssolutionn"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>&nbsp Dashboard</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'health:album-add' %}">
+                            <div class="ssolutionn"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp  Health Data</div>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="#">
+                            <div class="ssolutionn"><span class="glyphicon glyphicon-check" aria-hidden="true"></span>&nbsp; Recommendation</div>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="#">
+                            <div class="ssolutionn"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>&nbsp; Task</div>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="#">
+                            <div class="ssolutionn"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp; Calendar</div>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true"><div class="ssolutionn" id="settt"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp; Settings</div></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li class="">
+                                <a href="#">
+                                    <span class="glyphicon glyphicon-cloud" aria-hidden="true"></span>&nbsp; Emergency Center
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="">
+                                <a href="#">
+                                    <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsp; Logout
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="">
+                                <a href="#">
+                                    <span class="glyphicon glyphicon-bell" aria-hidden="true"></span>&nbsp; Notifications
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+    </nav>
+    {% block body %}
+    {% endblock %}
+</body>
+<script type="text/javascript">
+    $(document).ready(function() {
+  $('li.active').removeClass('active');
+  $('a[href="' + location.pathname + '"]').closest('li').addClass('active');
+});
+</script>
+</html>

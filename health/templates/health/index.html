@@ -1,0 +1,143 @@
+{% extends 'health/base.html' %}
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-md-5">
+                <div class="panel panel-left">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">FIVE DAYS HEALTH DATA</h3>
+                    </div>
+                    <div class="panel-body">
+                        {% if object_list %}
+                            <table class="table table-striped table-hover ">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>ALBUM</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for album in all_albums %}
+                                        {% if forloop.counter < 6%}
+                                            <tr>
+                                                <td>{{ forloop.counter }}</td>
+                                                <td><a href = "{% url 'health:detail' album.id %}">{{ album.album_title }}</a></td>
+                                            </tr>
+                                        {% endif %}
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        {% else %}
+                            <h3>You don't have any albums</h3>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-5">
+                <div class="panel panel-right">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">DOCTOR RECOMMENDATION</h3>
+                    </div>
+                    <div class="panel-body">
+                        {% if object_list %}
+                            <table class="table table-striped table-hover ">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>ALBUM</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for album in all_albums %}
+                                        {% if forloop.counter < 6%}
+                                            <tr>
+                                                <td>{{ forloop.counter }}</td>
+                                                <td><a href = "{% url 'health:detail' album.id %}">{{ album.album_title }}</a></td>
+                                            </tr>
+                                        {% endif %}
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        {% else %}
+                            <h3>You don't have any albums</h3>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-2">
+                <div class="panel panel-last">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">AVAILABLE DOCTORS</h3>
+                    </div>
+                    <div class="panel-body">
+                        {% if object_list %}
+                            <table class="table table-striped table-hover ">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>DOCTOR</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for album in all_albums %}
+                                        {% if forloop.counter < 6%}
+                                            <tr>
+                                                <td>{{ forloop.counter }}</td>
+                                                <td><a href = "{% url 'health:detail' album.id %}">{{ album.album_title }}</a></td>
+                                            </tr>
+                                        {% endif %}
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        {% else %}
+                            <h3>You don't have any albums</h3>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <div class="panel panel-left">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">HEALTH CHART</h3>
+                    </div>
+                    <div class="panel-body">
+                        <img src="http://cache.sporttracks.mobi/blog/images/201409/health-chart-hovertips.png">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <div class="panel panel-right">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">DAIRY TASK</h3>
+                    </div>
+                    <div class="panel-body">
+                        {% if object_list %}
+                            <table class="table table-striped table-hover ">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>TASK</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for album in all_albums %}
+                                        {% if forloop.counter < 6%}
+                                            <tr>
+                                                <td>{{ forloop.counter }}</td>
+                                                <td><a href = "{% url 'health:detail' album.id %}">{{ album.album_title }}</a></td>
+                                            </tr>
+                                        {% endif %}
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        {% else %}
+                            <h3>You don't have any albums</h3>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

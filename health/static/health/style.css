@@ -1,0 +1,115 @@
+body{
+    background: white url("images/WP.png");
+    padding-top: 70px;
+}
+.navbar-brand{
+    font-family: 'Carter One', cursive;
+    text-shadow: 1px 1px 1px black;
+}
+
+.navbar{
+    border-radius: 0;
+    box-shadow: 0 4px 20px -5px black;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0, rgb(27, 108, 255) 50%, rgba(74, 255, 90, 0.75) 85%, rgb(203, 255, 211) 100%);
+    border-bottom: none;
+}
+
+#topNavBar li a {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    font-family: 'Baloo Bhaina', cursive;
+}
+
+#topNavBar li a:after {
+    display: block;
+    position: absolute;
+    margin: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: '.';
+    color: transparent;
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    background: transparent;
+}
+
+#topNavBar li a:hover:after {
+    -webkit-animation: circle 1.2s ease-in forwards;
+}
+
+@-webkit-keyframes circle {
+    0% {
+        width: 1px;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        height: 1px;
+        z-index: -1;
+        background: #333333;
+        border-radius: 100%;
+    }
+    100% {
+        background: #0c0c0c;
+        height: 5000%;
+        width: 5000%;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border-radius: 0;
+    }
+}
+
+.panel-left .panel-heading{
+    background-image: radial-gradient(farthest-corner at 0px 45px , rgb(255, 103, 31) 0%, #ff1e7c 70%, #790da9 100%);
+}
+
+.panel-right .panel-heading{
+    background-image: radial-gradient(farthest-corner at 0px 45px , rgb(121, 13, 169) 0%, #1b6cff 70%, #4bff77 100%);
+}
+
+.panel-last .panel-heading{
+    background-image: radial-gradient(farthest-corner at 0px 45px , rgb(46, 255, 73) 0%, #cbffd3 100%);
+}
+
+.panel-title{
+    font-family: 'Carter One', cursive;
+}
+
+.panel{
+    border: none;
+    box-shadow: 0 4px 20px -5px black;
+}
+
+.navbar-inverse .navbar-nav>li>a>.ssolutionn , .panel-title{
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 1px rgba(32, 32, 32, 0.93);
+}
+
+.btn{
+    background-image: radial-gradient(farthest-corner at 0px 70px , #ff1896 0%, #1b6cff 100%);
+    border: none;
+}
+
+.btn:hover{
+    background-image: radial-gradient(farthest-corner at 0px 70px , #d61481 0%, #1862e7 100%);
+    border: none;
+}
+
+#settt{
+    color: #114098;
+    text-shadow: none;
+}
+
+#settt:hover{
+    color: #1c6aff;
+    text-shadow: none;
+}
