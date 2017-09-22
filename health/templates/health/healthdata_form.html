@@ -1,5 +1,5 @@
 {% extends 'health/base.html' %}
-{% block title %}Add a New Album{% endblock %}
+{% block title %}Add Dairy Health Data{% endblock %}
 {#{% block albums_active %}active{% endblock %}#}
 
 {% block body %}
@@ -7,7 +7,7 @@
 
     <div class="row">
 
-        <div class="col-sm-12 col-md-6">
+        <div class="col-sm-12 col-md-5">
             <div class="panel panel-left">
                 <div class="panel-heading">
                     <h3 class="panel-title">ADD YOUR HEALTH DATA HERE</h3>
@@ -26,7 +26,7 @@
             </div>
         </div>
 
-        <div class="col-sm-12 col-md-6">
+        <div class="col-sm-12 col-md-7">
             <div class="panel panel-right">
                 <div class="panel-heading">
                     <h3 class="panel-title">RECENT HEALTH DATA</h3>
@@ -37,18 +37,24 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>ALBUM</th>
+                                    <th>HEART RATE</th>
+                                    <th>WEIGHT</th>
+                                    <th>TEMPERATURE</th>
+                                    <th>NOTE</th>
                                     <th>DELETE</th>
                                     <th>UPDATE</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {% for album in all_albums %}
+                                {% for hdata in all_hdata %}
                                     <tr>
                                         <td>{{ forloop.counter }}</td>
-                                        <td><a href = "{% url 'health:detail' album.id %}">{{ album.album_title }}</a></td>
+                                        <td><a href = "{% url 'health:detail' hdata.id %}">{{ hdata.heart_rate }}</a></td>
+                                        <td>{{ hdata.weight }}</td>
+                                        <td>{{ hdata.temperature }}</td>
+                                        <td>{{ hdata.note }}</td>
                                         <td>
-                                            <form action="{% url 'health:album-delete' album.id %}" method="post" style="display: inline">
+                                            <form action="{% url 'health:hdata-delete' hdata.id %}" method="post" style="display: inline">
                                                 {% csrf_token %}
                                                 <button type="submit" class="btn btn-default btn-sm">
                                                     <span class="glyphicon glyphicon-trash"></span>
@@ -57,7 +63,7 @@
                                         </td>
                                         <td>
                                             <button type="submit" class="btn btn-default btn-sm">
-                                                <a href="{% url 'health:album-update' album.id %}">
+                                                <a href="{% url 'health:hdata-update' hdata.id %}">
                                                     <span class="glyphicon glyphicon-pencil"></span>
                                                 </a>
                                             </button>
@@ -67,7 +73,7 @@
                             </tbody>
                         </table>
                         {% else %}
-                            <h3>You don't have any albums</h3>
+                            <h3>You don't have any data</h3>
                         {% endif %}
                 </div>
             </div>

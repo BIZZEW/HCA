@@ -13,22 +13,27 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>ALBUM</th>
+                                        <th>HEART RATE</th>
+                                        <th>WEIGHT</th>
+                                        <th>TEMPERATURE</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {% for album in all_albums %}
+                                    {% for hdata in all_hdata %}
                                         {% if forloop.counter < 6%}
                                             <tr>
                                                 <td>{{ forloop.counter }}</td>
-                                                <td><a href = "{% url 'health:detail' album.id %}">{{ album.album_title }}</a></td>
+                                                <td><a href = "{% url 'health:detail' hdata.id %}">{{ hdata.heart_rate }}</a></td>
+                                                <td>{{ hdata.weight }}</td>
+                                                <td>{{ hdata.temperature }}</td>
+                                                <td>{{ hdata.note }}</td>
                                             </tr>
                                         {% endif %}
                                     {% endfor %}
                                 </tbody>
                             </table>
                         {% else %}
-                            <h3>You don't have any albums</h3>
+                            <h3>You don't have any data</h3>
                         {% endif %}
                     </div>
                 </div>
@@ -44,22 +49,27 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>ALBUM</th>
+                                        <th>HEART RATE</th>
+                                        <th>WEIGHT</th>
+                                        <th>TEMPERATURE</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {% for album in all_albums %}
+                                    {% for hdata in all_hdata %}
                                         {% if forloop.counter < 6%}
                                             <tr>
                                                 <td>{{ forloop.counter }}</td>
-                                                <td><a href = "{% url 'health:detail' album.id %}">{{ album.album_title }}</a></td>
+                                                <td><a href = "{% url 'health:detail' hdata.id %}">{{ hdata.heart_rate }}</a></td>
+                                                <td>{{ hdata.weight }}</td>
+                                                <td>{{ hdata.temperature }}</td>
+                                                <td>{{ hdata.note }}</td>
                                             </tr>
                                         {% endif %}
                                     {% endfor %}
                                 </tbody>
                             </table>
                         {% else %}
-                            <h3>You don't have any albums</h3>
+                            <h3>You don't have any data</h3>
                         {% endif %}
                     </div>
                 </div>
@@ -75,22 +85,24 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>DOCTOR</th>
+                                        <th>HR</th>
+                                        <th>WEIGHT</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {% for album in all_albums %}
+                                    {% for hdata in all_hdata %}
                                         {% if forloop.counter < 6%}
                                             <tr>
                                                 <td>{{ forloop.counter }}</td>
-                                                <td><a href = "{% url 'health:detail' album.id %}">{{ album.album_title }}</a></td>
+                                                <td><a href = "{% url 'health:detail' hdata.id %}">{{ hdata.heart_rate }}</a></td>
+                                                <td>{{ hdata.weight }}</td>
                                             </tr>
                                         {% endif %}
                                     {% endfor %}
                                 </tbody>
                             </table>
                         {% else %}
-                            <h3>You don't have any albums</h3>
+                            <h3>You don't have any data</h3>
                         {% endif %}
                     </div>
                 </div>
@@ -118,22 +130,27 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>TASK</th>
+                                        <th>HEART RATE</th>
+                                        <th>WEIGHT</th>
+                                        <th>TEMPERATURE</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {% for album in all_albums %}
+                                    {% for hdata in all_hdata %}
                                         {% if forloop.counter < 6%}
                                             <tr>
                                                 <td>{{ forloop.counter }}</td>
-                                                <td><a href = "{% url 'health:detail' album.id %}">{{ album.album_title }}</a></td>
+                                                <td><a href = "{% url 'health:detail' hdata.id %}">{{ hdata.heart_rate }}</a></td>
+                                                <td>{{ hdata.weight }}</td>
+                                                <td>{{ hdata.temperature }}</td>
+                                                <td>{{ hdata.note }}</td>
                                             </tr>
                                         {% endif %}
                                     {% endfor %}
                                 </tbody>
                             </table>
                         {% else %}
-                            <h3>You don't have any albums</h3>
+                            <h3>You don't have any data</h3>
                         {% endif %}
                     </div>
                 </div>

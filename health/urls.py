@@ -9,19 +9,16 @@ urlpatterns = [
 
     url(r'^register/$', views.UserFormView.as_view(), name='register'),
 
-    # /health/<album_id>/
-    url(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name='detail'),
+    # /health/hdata/add/
+    url(r'hdata/add/$', views.HdataCreate.as_view(), name='hdata-add'),
 
-    # /health/album/add/
-    url(r'album/add/$', views.AlbumCreate.as_view(), name='album-add'),
-
-    # /health/album/2/
-    url(r'album/(?P<pk>[0-9]+)/$', views.AlbumUpdate.as_view(), name='album-update'),
+    # /health/hdata/2/
+    url(r'hdata/(?P<pk>[0-9]+)/$', views.HdataUpdate.as_view(), name='hdata-update'),
 
     # /health/album/2/delete
-    url(r'album/(?P<pk>[0-9]+)/delete/$', views.AlbumDelete.as_view(), name='album-delete'),
+    url(r'hdata/(?P<pk>[0-9]+)/delete/$', views.HdataDelete.as_view(), name='hdata-delete'),
 
-    # /health/<album_id>/favorite/
-    # url(r'^(?P<album_id>[0-9]+)/favorite/$', views.favorite, name='favorite'),
+    # /health/<album_id>/
+    url(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name='detail'),
 ]
 

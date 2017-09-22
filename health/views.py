@@ -52,41 +52,41 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.views import generic
 from django.views.generic import View
-from .models import Album
+from .models import HealthData
 from .forms import UserForm
 
 
 class IndexView(generic.ListView):
     # model = Album
     template_name = 'health/index.html'
-    context_object_name = 'all_albums'
+    context_object_name = 'all_hdata'
 
     def get_queryset(self):
-        return Album.objects.all()
+        return HealthData.objects.all()
 
 
 class DetailView(generic.DetailView):
-    model = Album
+    model = HealthData
     template_name = 'health/detail.html'
 
 
-class AlbumCreate(CreateView, generic.ListView):
-    model = Album
-    fields = ['artist', 'album_title', 'genre', 'album_logo']
-    context_object_name = 'all_albums'
-    success_url = reverse_lazy('health:album-add')
+class HdataCreate(CreateView, generic.ListView):
+    model = HealthData
+    fields = ['heart_rate', 'weight', 'temperature', 'note']
+    context_object_name = 'all_hdata'
+    success_url = reverse_lazy('health:hdata-add')
 
 
-class AlbumUpdate(UpdateView, generic.ListView):
-    model = Album
-    context_object_name = 'all_albums'
-    fields = ['artist', 'album_title', 'genre', 'album_logo']
-    success_url = reverse_lazy('health:album-add')
+class HdataUpdate(UpdateView, generic.ListView):
+    model = HealthData
+    context_object_name = 'all_hdata'
+    fields = ['heart_rate', 'weight', 'temperature', 'note']
+    success_url = reverse_lazy('health:hdata-update')
 
 
-class AlbumDelete(DeleteView):
-    model = Album
-    success_url = reverse_lazy('health:album-add')
+class HdataDelete(DeleteView):
+    model = HealthData
+    success_url = reverse_lazy('health:hdata-add')
 
 
 class UserFormView(View):
