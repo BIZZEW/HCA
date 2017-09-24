@@ -10,7 +10,7 @@ body{
 .navbar{
     border-radius: 0;
     box-shadow: 0 4px 20px -5px black;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0, rgb(27, 108, 255) 50%, rgba(74, 255, 90, 0.75) 85%, rgb(203, 255, 211) 100%);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9) 0, rgb(27, 108, 255) 50%, rgba(74, 255, 90, 0.8) 85%, rgb(203, 255, 211) 100%);
     border-bottom: none;
 }
 
@@ -19,6 +19,15 @@ body{
     overflow: hidden;
     z-index: 1;
     font-family: 'Baloo Bhaina', cursive;
+}
+
+.slogan{
+    position: absolute;
+    font-family: 'Damion', cursive;
+    color: rgba(0, 0, 0, 0.43);
+    left: 41%;
+    top: 7px;
+    font-size: x-large;
 }
 
 #topNavBar li a:after {
@@ -68,6 +77,10 @@ body{
     }
 }
 
+.panel-heading{
+    border-bottom: none;
+}
+
 .panel-left .panel-heading{
     background-image: radial-gradient(farthest-corner at 0px 45px , rgb(255, 103, 31) 0%, #ff1e7c 70%, #790da9 100%);
 }
@@ -89,9 +102,30 @@ body{
     box-shadow: 0 4px 20px -5px black;
 }
 
+.panel-login>.panel-body{
+    background: white url("images/loginbg.jpg") no-repeat center center;
+    background-size: cover;
+    height:300px;
+}
+
+input{
+    background-color: #ffffff;
+    border: none;
+}
+
+.login-form{
+    color: rgb(0, 0, 0);
+    text-shadow: 0px 0px 1px rgba(28, 106, 255, 0.88);
+}
+
 .navbar-inverse .navbar-nav>li>a>.ssolutionn , .panel-title{
     color: rgb(255, 255, 255);
     text-shadow: 1px 1px 1px rgba(32, 32, 32, 0.93);
+}
+
+.navbar-inverse .navbar-nav>li>a>.ssolutionn:hover{
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.88);
 }
 
 .btn{
@@ -104,12 +138,12 @@ body{
     border: none;
 }
 
-#settt{
+#settt , .dropdown-menu>li>a{
     color: #114098;
     text-shadow: none;
 }
 
-#settt:hover{
+#settt:hover, .dropdown-menu>li>a:hover{
     color: #1c6aff;
     text-shadow: none;
 }

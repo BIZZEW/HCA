@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>HCA::SIGN UP</title>
+    <title>HCA::LOGIN</title>
     {% load staticfiles %}
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Damion">
@@ -26,7 +26,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="">
-                        <a href="{% url 'health:login' %}" aria-expanded="true"><div class="ssolutionn" id="settt"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp; LOGIN</div></a>
+                        <a href="{% url 'health:register' %}" aria-expanded="true"><div class="ssolutionn" id="settt"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp; SIGN UP</div></a>
                     </li>
                 </ul>
 
@@ -42,16 +42,18 @@
             <div class="col-sm-12 col-md-offset-2 col-md-8">
                 <div class="panel panel-right panel-login">
                     <div class="panel-heading">
-                        <h3 class="panel-title" style="text-align: center">CREATE A NEW ACCOUNT</h3>
+                        <h3 class="panel-title" style="text-align: center">LOGIN</h3>
                     </div>
                     <div class="panel-body">
                         <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
                             {% csrf_token %}
                             <br>
-                            <div class="col-md-offset-3 col-md-8 login-form">
-                                {% include 'health/form-template.html' %}
+                            <br>
+                            <br>
+                            <div class="col-md-offset-4 col-md-4 login-form">
+                                {{ form.as_p }}
                                 <br>
-                                <button type="submit" class="btn btn-success col-md-offset-3 col-md-3">SIGN UP</button>
+                                <button type="submit" class="btn btn-success col-md-offset-4 col-md-4">LOGIN</button>
                             </div>
                         </form>
                     </div>
@@ -61,8 +63,3 @@
     </div>
 </body>
 </html>
-
-
-
-
-

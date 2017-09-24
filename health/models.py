@@ -16,17 +16,24 @@ class Album(models.Model):
         return self.album_title + ' - ' + self.artist
 
 
+# class User(models.Model):
+#     user
+
 class HealthData(models.Model):
     heart_rate = models.IntegerField()
     weight = models.FloatField(max_length=500)
     temperature = models.FloatField(max_length=100)
     note = models.CharField(max_length=500)
+    user_name = models.CharField(max_length=500)
 
     def get_absolute_url(self):
         return reverse('health:detail', kwargs={'pk': self.pk})
 
+    # def get_health_data(self):
+    #     return self.objects.filter(user_name=user.username)
+
     def __str__(self):
-        return self.heart_rate + ' - ' + self.weight
+        return str(self.heart_rate) + ' - ' + str(self.weight)
 
 
 class Song(models.Model):

@@ -64,6 +64,8 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         return HealthData.objects.all()
 
+    # return HealthData.objects.filter(user_name=self.user.username)
+
 
 class DetailView(generic.DetailView):
     model = HealthData
