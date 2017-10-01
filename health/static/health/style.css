@@ -2,9 +2,27 @@ body{
     background: white url("images/WP.png");
     padding-top: 70px;
 }
-.navbar-brand{
+
+.navbar-inverse .navbar-brand{
+    position: relative;
     font-family: 'Carter One', cursive;
     text-shadow: 1px 1px 1px black;
+    color: rgb(16, 74, 255);
+    font-size: x-large;
+}
+
+.navbar-inverse .navbar-brand[data-text]::after {
+    content: attr(data-text);
+    color: #4aff5a;
+    position: absolute;
+    left: 16px;
+    top: 15px;
+    z-index: 2;
+    -webkit-mask-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#0117ff), to(rgba(0, 0, 255, 0)));
+}
+
+.navbar-inverse .navbar-brand:hover{
+    color: rgb(16, 74, 255);
 }
 
 .navbar{
@@ -37,6 +55,52 @@ body{
     position: absolute;
     left: 0px;
     top: 0;
+    z-index: 2;
+    -webkit-mask-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#0117ff), to(rgba(0, 0, 255, 0)));
+}
+
+.panel-right .panel-title{
+    position: relative;
+    text-shadow: 1px 1px 2px #0e3176;
+    color: rgb(49, 143, 255);
+}
+
+.panel-right .panel-title[data-text]::after {
+    content: attr(data-text);
+    color: rgba(118, 255, 110, 0.84);
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    -webkit-mask-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#0117ff), to(rgba(0, 0, 255, 0)));
+}
+
+.panel-left .panel-title{
+    position: relative;
+    text-shadow: 1px 1px 2px #ae1556;
+    color: rgb(255, 35, 232);
+}
+
+.panel-left .panel-title[data-text]::after {
+    content: attr(data-text);
+    color: rgba(255, 218, 10, 0.84);
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    -webkit-mask-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#0117ff), to(rgba(0, 0, 255, 0)));
+}
+
+.panel-last .panel-title{
+    position: relative;
+    text-shadow: 1px 1px 1px rgba(55, 119, 51, 0.71);
+    color: rgb(51, 255, 221);
+    font-size: small;
+}
+
+.panel-last .panel-title[data-text]::after {
+    content: attr(data-text);
+    color: #f5fff2;
+    position: absolute;
+    left: 0;
     z-index: 2;
     -webkit-mask-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#0117ff), to(rgba(0, 0, 255, 0)));
 }
